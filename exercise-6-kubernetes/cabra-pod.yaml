@@ -1,0 +1,7 @@
+apiVersion: webapp.luismafra/v1
+kind: Animal
+metadata:
+  name: cabra
+spec:
+  image: luismafra/animal:latest
+  voice: "béeeee"

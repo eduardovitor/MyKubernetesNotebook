@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyclient
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pyclient
+  template:
+    metadata:
+      labels:
+        app: pyclient
+    spec:
+      containers:
+      - name: pyclient
+        image: 384845845052/pyclient:v0.1
+        env:
+          - name: SERVER_ADDRESS
+            value: http://pyserver
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "250m"
+          limits:
+            memory: "800Mi"
+            cpu: "500m"

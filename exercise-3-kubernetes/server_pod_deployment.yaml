@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyserver
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pyserver
+  template:
+    metadata:
+      labels:
+        app: pyserver
+    spec:
+      containers:
+      - name: pyserver
+        image: 384845845052/pyserver:v0.1
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "250m"
+          limits:
+            memory: "800Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5001
+        volumeMounts:
+        - mountPath: "/usr/src/app/users.json"
+          subPath: "users.json"
+          name: users-volume
+      volumes:
+      - name: users-volume
+        configMap:
+            name: users-conf

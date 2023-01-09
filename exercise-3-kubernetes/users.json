@@ -1,0 +1,25 @@
+{
+	"users": 
+	[
+	{
+	   "firstName": "Jane",
+       "middleName": "Smith",
+       "lastName": "Doe"
+    },
+	{
+	   "firstName": "Luis",
+       "middleName": "Eduardo",
+       "lastName": "Mafra"
+    },
+	{
+		"firstName": "Eduardo",
+		"middleName": "Vitor",
+		"lastName": "Vieira Torres"
+	 },
+	 {
+		"firstName": "Carlos",
+		"middleName": "André",
+		"lastName": "Ribeiro"
+	 }
+	]
+}

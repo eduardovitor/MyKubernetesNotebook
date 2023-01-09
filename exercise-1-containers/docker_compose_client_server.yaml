@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+   client:
+      image: 384845845052/pyclient:v0.1
+      environment:
+         - SERVER_ADDRESS=http://server
+      depends_on:
+         - server
+   server:
+      image: 384845845052/pyserver:v0.1
+      ports:
+        - "5000:5001"

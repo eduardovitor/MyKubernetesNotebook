@@ -1,0 +1,14 @@
+FROM python:3
+
+WORKDIR /usr/src/app
+
+COPY requirements_server.txt server.py users.json ./
+
+COPY db ./db
+
+RUN pip install -r requirements_server.txt
+
+EXPOSE 5001
+
+CMD [ "python3", "./server.py"]
+

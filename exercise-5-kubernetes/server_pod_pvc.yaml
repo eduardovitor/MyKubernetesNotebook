@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pyserver
+spec:
+  volumes:
+    - name: pv-claim-nfs-client
+      persistentVolumeClaim:
+        claimName: nfs-client-pvc
+  containers:
+  - name: pyserver
+    image: 384845845052/pyserver:v0.1
+    ports:
+    - containerPort: 5001
+    volumeMounts:
+        - mountPath: "/nfs"
+          name: pv-claim-nfs-client
+
+
+    

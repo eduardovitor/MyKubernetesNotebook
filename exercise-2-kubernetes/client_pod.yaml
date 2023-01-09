@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pyclient
+spec:
+  containers:
+  - name: pyclient
+    image: 384845845052/pyclient:v0.1
+    env:
+      - name: SERVER_ADDRESS
+        value: pyserver

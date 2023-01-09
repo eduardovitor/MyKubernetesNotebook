@@ -1,0 +1,10 @@
+FROM python:3
+
+WORKDIR /usr/src/app
+
+COPY requirements_client.txt client.py ./
+
+RUN pip install -r requirements_client.txt
+
+CMD [ "python3", "./client.py"]
+
